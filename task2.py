@@ -12,7 +12,6 @@ all_rows = []
 for match in matches:
     href = match['href']
     match_id = href[-22:-15]
-    print(match_id)
     rows = GetDetails(match_id, False)
     all_rows = all_rows + rows
 
