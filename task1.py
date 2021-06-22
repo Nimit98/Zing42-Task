@@ -13,15 +13,16 @@ def GetDetails(match_id, file_name):
     ground_id = data['match']['ground_id']
     date_string = data['match']['date_string']
     home_team_id = data['match']['home_team_id']
-    if int(home_team_id) == 0:
-        home_team_name = ""
-    else:
-        home_team_name = data['match']['home_team_name']
     away_team_id = data['match']['away_team_id']
-    if int(away_team_id) == 0:
+    if home_team_id == data['match']['team1_id']:
+        home_team_name = data['match']['team1_name']
+        away_team_name = data['match']['team2_name']
+    elif home_team_id == data['match']['team2_id']:
+        home_team_name = data['match']['team2_name']
+        away_team_name = data['match']['team1_name']
+    if int(home_team_id) == 0:
         away_team_name = ""
-    else:
-        away_team_name = data['match']['away_team_name']
+        home_team_name = ""
 
     teams = data['team']
     i = 0

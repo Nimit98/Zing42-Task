@@ -3,7 +3,7 @@ from urllib.request import urlopen
 from task1 import GetDetails
 import csv
 
-url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595/match-results"
+url = "https://www.espncricinfo.com/series/ipl-2019-1165643/match-results"
 url_contents = urlopen(url).read()
 soup = BeautifulSoup(url_contents, "html.parser", )
 matches = soup.find_all("a", {"class": "match-info-link-FIXTURES"})
